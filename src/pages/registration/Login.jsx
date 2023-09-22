@@ -11,9 +11,8 @@ const Login = () => {
 
   const signin = async () => {
     if (email === "" || password === "") {
-      return alert("plese fill all the fields");
+      return alert("please fill all the fields");
     }
-
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
       const users = localStorage.setItem("user", JSON.stringify(user));
@@ -21,6 +20,7 @@ const Login = () => {
       navigate("/");
       setEmail("");
       setPassword("");
+
       console.log(users);
     } catch (error) {
       console.log(error);
